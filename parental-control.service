@@ -1,0 +1,17 @@
+[Unit]
+Description=Parental Control Service
+After=network.target
+
+[Service]
+Type=simple
+# Another Type option: forking
+
+WorkingDirectory=/etc/parental-control
+ExecStart=/etc/parental-control/parental-control.sh
+#User=root
+
+Restart=on-abort
+# Other Restart options: or always, on-abort, on-failure etc
+
+[Install]
+WantedBy=multi-user.target
